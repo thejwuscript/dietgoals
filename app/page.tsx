@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <section className="flex flex-col items-center min-h-screen">
         <div className="flex justify-center items-center text-2xl mt-12 gap-2">
-          <img src="/images/veggie_bowl.png" alt="veggie bowl" width={56} />
+          <Image src="/images/veggie_bowl.png" alt="veggie bowl" width={56} height={56} />
           <h1 className="mt-4 text-5xl font-bold">DietGoals</h1>
         </div>
         <div className="my-16 text-2xl">
