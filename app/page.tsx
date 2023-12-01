@@ -17,7 +17,7 @@ export default function Home() {
           SIGN UP
         </button>
         <div className="flex justify-center flex-1 w-full bg-gradient-to-b from-transparent to-gray-300">
-          <img src="/images/plate.png" alt="plate" className="w-3/4 max-w-[400px] object-scale-down" />
+          <Image src="/images/plate.png" alt="plate" className="w-3/4 max-w-[400px] object-scale-down" width={514} height={512} />
         </div>
       </section>
     </div>
