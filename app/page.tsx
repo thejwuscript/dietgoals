@@ -14,9 +14,22 @@ export default function Home() {
           <br />
           <span className="font-bold italic">reach your goals.</span>
         </div>
-        <Link href="/auth/signup" className="w-40 h-10 flex justify-center items-center shrink-0 rounded-2xl border-blue-800 bg-blue-700 text-white font-bold pointer m-12">
+
+        <p className="text-2xl mb-10">
+          Embark on your wellness journey
+          <br />
+          with <span className="font-bold">77</span> like-minded individuals
+          <br />
+          choosing a healthier lifestyle.
+        </p>
+
+        <Link
+          href="/auth/signup"
+          className="w-40 h-10 flex justify-center items-center shrink-0 rounded-2xl border-blue-800 bg-blue-700 text-white font-bold pointer m-12"
+        >
           SIGN UP
         </Link>
+
         <div className="flex justify-center flex-1 w-full bg-gradient-to-b from-transparent to-gray-300">
           <Image
             src="/images/plate.png"
