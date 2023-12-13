@@ -1,7 +1,37 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const [visitorCount, setVisitorCount] = useState(null);
+
+  useEffect(() => {
+    if (visitorCount) return;
+
+    const url = process.env.NEXT_PUBLIC_API_BASE_URL + "/visitorCount";
+
+    const getLatestCount = async () => {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch(url!, options);
+      return response.json();
+    };
+
+    getLatestCount()
+      .then((data) => setVisitorCount(data.visitCount))
+      .catch((err) => console.error(err));
+  }, []);
+
+  if (visitorCount === null) {
+    return <></>;
+  }
+
   return (
     <div>
       <section className="flex flex-col items-center min-h-screen">
@@ -18,7 +48,7 @@ export default function Home() {
         <p className="text-2xl mb-10">
           Embark on your wellness journey
           <br />
-          with <span className="font-bold">77</span> like-minded individuals
+          with <span className="font-bold">{visitorCount}</span> like-minded individuals
           <br />
           choosing a healthier lifestyle.
         </p>
