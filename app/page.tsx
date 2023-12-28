@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,9 +13,9 @@ export default function Home() {
           <br />
           <span className="font-bold italic">reach your goals.</span>
         </div>
-        <Link href="/auth/signup" className="w-40 h-10 flex justify-center items-center shrink-0 rounded-2xl border-blue-800 bg-blue-700 text-white font-bold pointer m-12">
+        <button className="w-40 h-10 flex justify-center items-center shrink-0 rounded-2xl border-blue-800 bg-blue-700 text-white font-bold pointer m-12">
           SIGN UP
-        </Link>
+        </button>
         <div className="flex justify-center flex-1 w-full bg-gradient-to-b from-transparent to-gray-300">
           <Image
             src="/images/plate.png"
