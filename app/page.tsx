@@ -1,8 +1,9 @@
 import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className="relative bg-[url('/images/berries_bg.jpg')] bg-center min-h-[900px]:bg-cover bg-no-repeat">
+    <div className={`relative bg-[url('/images/berries_bg.jpg')] bg-center sm:bg-cover bg-no-repeat ${styles.bg}`}>
       <section className="relative flex flex-col items-center min-h-screen">
         <div className="flex justify-center items-center text-2xl mt-12 gap-2">
           <Image src="/images/veggie_bowl.png" alt="veggie bowl" width={56} height={56} />

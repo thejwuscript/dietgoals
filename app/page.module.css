@@ -1,0 +1,5 @@
+@media screen and (max-height: 950px) {
+  .bg {
+    background-size: auto;
+  }
+}
