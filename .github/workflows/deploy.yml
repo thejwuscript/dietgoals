@@ -43,7 +43,7 @@ jobs:
         run: npx next build
 
       - name: Sync files to S3 bucket
-        run: aws s3 sync ./out/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync ./out/ s3://${{ secrets.S3_BUCKET_NAME }} --delete --size-only
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
