@@ -1,7 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import useVisitCount from "@/hooks/useVisitCount";
 
 export default function Home() {
+  const { data: visitCount, error } = useVisitCount();
+
+  if (visitCount === null) {
+    return <></>;
+  }
+
   return (
     <div className={`relative bg-[url('/images/berries_bg.jpg')] bg-center sm:bg-cover bg-no-repeat ${styles.bg}`}>
       <section className="relative flex flex-col items-center min-h-screen">
@@ -20,8 +29,8 @@ export default function Home() {
           </div>
           <div className="px-4 text-xl max-w-[400px] flex justify-center items-center flex-1">
             <div>
-              Join <span className="font-bold text-2xl">28</span> individuals who are eager to start their path to a
-              healthier lifestyle!
+              Join <span className="font-bold text-2xl">{visitCount}</span> individuals who are eager to start their
+              path to a healthier lifestyle!
             </div>
           </div>
         </div>
