@@ -41,6 +41,8 @@ jobs:
 
       - name: Build with Next.js
         run: npx next build
+        env:
+          NEXT_PUBLIC_API_BASE_URL: https://api.dietgoals.site
 
       - name: Sync files to S3 bucket
         run: aws s3 sync ./out/ s3://${{ secrets.S3_BUCKET_NAME }} --delete --size-only
