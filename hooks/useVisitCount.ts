@@ -10,7 +10,8 @@ export default function useVisitCount() {
     const url = process.env.NEXT_PUBLIC_API_BASE_URL + "/visitCount";
 
     const updateVisitCount = async () => {
-      const options = {
+      const options: RequestInit = {
+        credentials: "include",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
